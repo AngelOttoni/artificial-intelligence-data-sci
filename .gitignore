@@ -1,6 +1,11 @@
 #Folders
 NLW_AI/
+data_sci_topics/data/
+data_sci_topics/src
 
+# Files
 Portal do Aluno - Atestado de Matrícula Autenticado.pdf
 nlp-script.py
 
+# Virtual Environment
+data_sci_topics/.my_venv
