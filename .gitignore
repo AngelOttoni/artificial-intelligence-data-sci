@@ -11,3 +11,26 @@ nlp-script.py
 # Virtual Environment
 data_sci_topics/.my_venv
 .my_venv
+
+# Materiais fornecidos nas disciplinas: uso local, sem versionamento
+**/live_class_slides/
+**/slides/
+**/materiais_professores/
+**/enunciados/
+**/[Ee]menta*
+**/[Ee]mentas/
+**/[Aa]ula*.pdf
+**/[Cc]ronograma*.pdf
+**/ML_*Trabalho_Pratico_*.pdf
+**/TP[0-9][0-9][0-9].pdf
+machine_learning/01_linear_models_handson/TP1 - Modelos Lineares.ipynb
+**/01_linear_models_handson/food_truck.txt
+**/01_linear_models_handson/imoveis.txt
+**/01_linear_models_handson/estudantes.txt
+**/01_linear_models_handson/microchips.txt
+
+# Entrega inclui dados originais; ambientes e caches também ficam locais
+**/01_linear_models_handson/entrega/
+**/.venv/
+**/__pycache__/
+**/.ipynb_checkpoints/
