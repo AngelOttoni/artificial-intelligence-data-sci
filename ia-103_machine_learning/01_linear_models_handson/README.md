@@ -1,52 +1,41 @@
 # TP1 - Modelos Lineares | IA-103
 
-Resolução de Angel Ottoni para a Especialização em Inteligência Artificial da Unimontes.
+**Angelina de Meiras Ottoni | PPGMCS/Unimontes | 2026**
 
-O notebook reúne implementação, execução, gráficos e análise das quatro partes do trabalho. O relatório em Markdown sintetiza os resultados. A organização e a redação da resolução são próprias; o roteiro é uma adaptação de atividades de Andrew Ng/Stanford, conforme seus créditos. Os dados e os materiais fornecidos na disciplina não são de autoria do estudante.
+Resolução do Trabalho Prático 1 de Machine Learning, organizada no próprio notebook fornecido pelo professor.
 
 ## Arquivos
 
-- `TP1_Modelos_Lineares.ipynb`: resolução executada, com nove células de código e verificações numéricas.
-- `relatorio.md`: relatório de análises e conclusões. A paginação depende do renderizador; contém aproximadamente 1.200 palavras e uma tabela, visando o limite de 1 a 3 páginas com diagramação compacta. Entregue em Markdown por preferência do autor.
-- `figuras/`: onze gráficos gerados pelo notebook, incluindo as dez fronteiras em uma figura.
-- `resultados.json`: parâmetros, métricas, versões e índices da divisão de microchips.
-- `experimentos_regularizacao.csv` e `validacao_cruzada.csv`: tabelas dos experimentos.
-- `reproduzir.py`: execução integral e montagem opcional do ZIP.
-- `requirements.txt`: versões utilizadas.
-- `materiais_professores/`: cópia local do roteiro original, ignorada pelo Git.
-- `entrega/TP1_Angel_Ottoni.zip`: pacote local de submissão, ignorado pelo Git porque inclui os dados fornecidos.
+- [tp1_linear_models.ipynb](tp1_linear_models.ipynb): notebook original preenchido e executado, com implementações, gráficos e análises.
+- [report.md](report.md): relatório de análises e conclusões, em redação impessoal.
+- [submission.md](submission.md): arquivo com os endereços da resolução para envio no ambiente da disciplina.
+- `food_truck.txt`, `imoveis.txt`, `estudantes.txt` e `microchips.txt`: datasets fornecidos para os exercícios. Os nomes originais foram mantidos para compatibilidade com o roteiro.
+- [requirements.txt](requirements.txt): versões das dependências utilizadas.
 
-## Reproduzir
+## Execução
 
-Utilize Python 3.12 e os quatro dados originais na mesma pasta do notebook:
-`food_truck.txt`, `imoveis.txt`, `estudantes.txt` e `microchips.txt`.
-Esses dados permanecem disponíveis localmente, mas são ignorados pelo Git. Após clonar o repositório, é necessário obtê-los pelo material da disciplina. O ZIP local de entrega já contém os quatro arquivos.
+Utilizar Python 3.12 e instalar as dependências:
 
 ```bash
-python3 -m venv .venv
-source .venv/bin/activate
 python -m pip install -r requirements.txt
-python reproduzir.py --zip
 ```
 
-A execução sobrescreve somente os artefatos gerados da própria resolução. O notebook também pode ser aberto em um ambiente Jupyter e executado do início ao fim.
+Abrir `tp1_linear_models.ipynb` em um ambiente com suporte a notebooks, selecionar o ambiente Python e executar as células em ordem. Os quatro datasets devem permanecer na mesma pasta. Os gráficos estão incorporados às saídas do notebook; não há dependência de script auxiliar ou de imagens externas.
 
-## Cobertura do roteiro
+## Correspondência com o roteiro
 
-| Parte | O que foi resolvido |
-|---|---|
-| Linear simples | Custo, gradiente batch, taxas, iterações, curva de erro, reta e previsões para 35 mil e 100 mil habitantes |
-| Linear múltipla | Padronização, gradiente vetorizado, curva de custo e previsão para 1.650 pés² e três quartos |
-| Logística | Sigmoide, custo, gradiente, resumo de `minimize`, ajuste CG, fronteira, probabilidade para notas 45/85, predição e acurácia |
-| Regularização | Mapeamento de grau 6, custo e gradiente consistentes, ajuste inicial, dez λ na mesma divisão, dez fronteiras, métricas e interpretação |
-| Verificação | Custos de referência, diferenças finitas, mínimos quadrados, convergência dos otimizadores e divisão sem sobreposição |
+As 101 células originais foram mantidas na mesma ordem, com preenchimento dos espaços de implementação e acréscimo de notas e análises identificadas. Foram preservados os nomes de funções e variáveis, incluindo `J_history`, com um custo por atualização.
 
-O histórico de custo inclui o estado inicial na posição zero. A demonstração de taxa instável usa 20 atualizações; as três taxas estáveis usam 2.000. A comparação principal de λ pelo teste atende ao roteiro e é identificada como exploratória. A validação cruzada complementar usa apenas o treinamento, mas não restaura a independência do teste já consultado.
+As alterações técnicas foram explicadas junto ao código: preservação do intercepto na normalização, estabilidade da sigmoide e do custo logístico, consistência entre custo e gradiente da regularização e configuração dos otimizadores. As duas imagens de referência ausentes no material foram sinalizadas nos respectivos locais. Os gráficos da resolução são apresentados nas saídas das células.
 
-## Material dos professores e versionamento
+Foram implementadas as quatro partes: regressão linear simples, regressão múltipla, regressão logística e regularização. Os dez experimentos de regularização utilizam a mesma divisão de treino e teste; a validação cruzada complementar utiliza somente o treinamento. As limitações da comparação pelo teste estão explicitadas.
 
-Os slides, roteiros originais, ementas e dados fornecidos são mantidos localmente e excluídos pelo `.gitignore`. O commit da resolução remove as antigas cópias do roteiro e dos dados do estado atual do Git; não reescreve os commits anteriores. Notebook de resolução, relatório e artefatos produzidos ficam versionados. Não se atribui aos professores a autoria das bases originais adaptadas; elas são tratadas aqui como material fornecido, sem redistribuição pública pelo commit.
+## Materiais e entrega
 
-## Autoria e revisão
+Os datasets utilizados nos exercícios acompanham a resolução e não são de autoria da estudante. Os enunciados e créditos do notebook original foram preservados. Slides, ementas e demais materiais de aula ficam fora do versionamento.
 
-Resolução preparada com apoio de IA na implementação, redação e verificação. A execução gerou os resultados incluídos. A leitura, compreensão e revisão pelo autor devem anteceder a submissão. A preferência por relatório em Markdown foi definida pelo autor; o enunciado limita sua extensão a 1 a 3 páginas, sem especificar formato de arquivo.
+A submissão será feita por arquivo Markdown contendo o link do repositório, conforme definido pela estudante. O relatório também foi mantido em Markdown.
+
+## Créditos
+
+Conforme o roteiro, o trabalho adapta atividades de Machine Learning de Andrew Ng, Stanford. Implementações, experimentos e análises preparados com apoio de IA. Os resultados apresentados correspondem à execução do notebook preenchido.
